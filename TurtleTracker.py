@@ -20,6 +20,10 @@ line_list = file_object.readlines()
 #Close the file
 file_object.close()
 
+#Create date and location dictionaries
+date_dict = {}
+location_dict = {}
+
 #Pretend we read one line of data from the file
 for lineString in line_list:
     # Check if line is a data line
@@ -38,3 +42,7 @@ for lineString in line_list:
 
     #Print the location of sara
     print(f"Record {record_id} indicates Sara was seen at lat:{obs_lat},lon:{obs_lon} on {obs_date}")
+
+    #Add items to dictionaries
+    date_dict[record_id] = obs_date
+    location_dict[record_id] = (obs_lat,obs_lon)
